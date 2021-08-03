@@ -21,24 +21,18 @@ function order_pizza($pizzaType, $customer) {
         }
 
 
+    echo "A {$pizzaType} pizza should be sent to {$customer}";
+    echo "<br>";
+    echo "The address is: {$address}";
+    echo "<br>";
+    echo "The bill is {$price} Euros<br>";
+    echo "Order finished. <br> <br>";
+    echo "<br>";
 
-    $ToPrint .=   ' pizza should be sent to ' . $customer . ". <br>The address: {$Address}.";
-    echo $ToPrint; echo '<br>';
-    echo'The bill is €'.$price.'.<br>';
-    echo "Order finished.<br><br>";
  }
-
-    //Functions Start
-    function total_price($price) {
-        return $price;
- }
-
-    function test($pizzaType) {
-        echo "Test: type is {$pizzaType}. <br>";
-    }
 
     function calculatePrice($pizzaType)
-        {
+    {
         if ($pizzaType == 'marguerita')
         {
             $pizzaCost = 50;
@@ -53,7 +47,7 @@ function order_pizza($pizzaType, $customer) {
         {
             $pizzaCost = 10;
         }
-        if ($pizzaType == 'hawai')
+        if ($pizzaType == 'hawaii')
         {
             throw new Exception('Computer says no');
         }
