@@ -1,70 +1,68 @@
 <?php
 
-// fw = for who
-function order_pizza($pizza_type, $customer) {
 
-    $type = $pizza_type;
+
+
+function order_pizza($PizzaType, $Customer) {
+
+    $Type = $PizzaType;
     echo 'Creating new order... <br>';
-    $toPrint = 'A ';
-    $toPrint .= $pizza_type;
-    $p = calc_cts($type);
+    $ToPrint = 'A ';
+    $ToPrint .= $PizzaType;
+    $P = calc_cts($Type);
 
-    $address = 'unknown';
-    if($customer == 'koen')
-    {
-        $address = 'a yacht in Antwerp';
-    } else if ($customer == 'manuele')
-    {
-        $address = 'somewhere in Belgium';
-    } else if ($customer == 'students') {
-        $address = 'BeCode office';
-    }
+        $Address = 'unknown';
+         if($Customer == 'koen')
+         {
+        $Address = 'a yacht in Antwerp';
+         }
+         else if ($Customer == 'manuele')
+         {
+        $Address = 'somewhere in Belgium';
+         }
+         else if ($Customer == 'students')
+         {
+        $Address = 'BeCode office';
+         }
 
-    $toPrint .=   ' pizza should be sent to ' . $customer . ". <br>The address: {$address}.";
-    echo $toPrint; echo '<br>';
-    echo'The bill is €'.$p.'.<br>';
-
-
+    $ToPrint .=   ' pizza should be sent to ' . $Customer . ". <br>The address: {$Address}.";
+    echo $ToPrint; echo '<br>';
+    echo'The bill is €'.$P.'.<br>';
     echo "Order finished.<br><br>";
 }
 
-
-
-
-function total_price($p) {
-    return $p;
+//Functions Start
+function total_price($P) {
+    return $P;
 }
 
-function test($pizza_type) {
-    echo "Test: type is {$pizza_type}. <br>";
+function test($PizzaType) {
+    echo "Test: type is {$PizzaType}. <br>";
 }
 
-function calc_cts($pizza_type)
+function calc_cts($PizzaType)
 {
 
-
-    if ($pizza_type == 'marguerita') {
-        $pizza_cost = 50;
-    }
-    else
+    if ($PizzaType == 'marguerita')
     {
-        if ($pizza_type == 'golden')
-        {
-            $pizza_cost = 100;
+        $PizzaCost = 50;
         }
+         else {
+             if ($PizzaType == 'golden') {
+                 $PizzaCost = 100;
+             }
+             if ($PizzaType == 'calzone') {
+                 $PizzaCost = 10;
+             }
+             if ($PizzaType == 'hawai') {
+                 throw new Exception('Computer says no');
+             }
 
-        if ($pizza_type == 'calzone')
-        {
-            $pizza_cost = 10;
-        }
+         }
 
-        if ($pizza_type == 'hawai') {
-            throw new Exception('Computer says no');
-        }
+         return $PizzaCost;
     }
 
-    return $pizza_cost;
-}
 
 function orderAllPizzas()
 {
@@ -75,12 +73,15 @@ function orderAllPizzas()
     order_pizza('golden', 'students');
 }
 
-function make_Allhappy($do_it) {
-    if ($do_it) {
+function make_Allhappy($RunFunction)
+{
+    if ($RunFunction)
+    {
         orderAllPizzas();
-    } else {
+    }
+    else {
         // Should not do anything when false
     }
 }
 
-make_Allhappy(true);
+Make_Allhappy(true);
