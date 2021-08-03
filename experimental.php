@@ -1,10 +1,5 @@
 <?php
-
-
-
-
 function order_pizza($PizzaType, $Customer) {
-
     $Type = $PizzaType;
     echo 'Creating new order... <br>';
     $ToPrint = 'A ';
@@ -29,59 +24,63 @@ function order_pizza($PizzaType, $Customer) {
     echo $ToPrint; echo '<br>';
     echo'The bill is €'.$P.'.<br>';
     echo "Order finished.<br><br>";
-}
+ }
 
-//Functions Start
-function total_price($P) {
-    return $P;
-}
+    //Functions Start
+    function total_price($P) {
+        return $P;
+ }
 
-function test($PizzaType) {
-    echo "Test: type is {$PizzaType}. <br>";
-}
+    function test($PizzaType) {
+        echo "Test: type is {$PizzaType}. <br>";
+    }
 
-function calc_cts($PizzaType)
-{
-
-    if ($PizzaType == 'marguerita')
-    {
-        $PizzaCost = 50;
+    function calc_cts($PizzaType)
+        {
+        if ($PizzaType == 'marguerita')
+        {
+            $PizzaCost = 50;
         }
-         else {
-             if ($PizzaType == 'golden') {
-                 $PizzaCost = 100;
-             }
-             if ($PizzaType == 'calzone') {
-                 $PizzaCost = 10;
-             }
-             if ($PizzaType == 'hawai') {
-                 throw new Exception('Computer says no');
-             }
+        else
+         {
+        if ($PizzaType == 'golden')
+        {
+            $PizzaCost = 100;
+        }
+        if ($PizzaType == 'calzone')
+        {
+            $PizzaCost = 10;
+        }
+        if ($PizzaType == 'hawai')
+        {
+            throw new Exception('Computer says no');
+        }
 
-         }
+    }
 
          return $PizzaCost;
     }
 
 
-function orderAllPizzas()
-{
-    $test= 0;
-    order_pizza('calzone', 'koen');
-    order_pizza('marguerita', 'manuele');
-
-    order_pizza('golden', 'students');
-}
-
-function make_Allhappy($RunFunction)
-{
-    if ($RunFunction)
+    function orderAllPizzas()
     {
-        orderAllPizzas();
+        $test= 0;
+        order_pizza('calzone', 'koen');
+        order_pizza('marguerita', 'manuele');
+
+        order_pizza('golden', 'students');
     }
-    else {
-        // Should not do anything when false
+
+    function make_Allhappy($RunFunction)
+    {
+        if ($RunFunction)
+        {
+            orderAllPizzas();
+        }
+        else
+        {
+            // Should not do anything when false
+        }
     }
-}
 
 Make_Allhappy(true);
